@@ -5,7 +5,7 @@
 
 ---
 
-A single-file offline medical readiness tracker for Filipino civilians, AFP reservists, volunteer organizations, and small tactical groups.
+A single-file offline medical readiness tracker for Filipino civilians, volunteer organizations, and small tactical groups.
 
 No installation. No server. No internet required. Open the HTML file in any browser.
 
@@ -256,4 +256,4 @@ For organizational and personal preparedness use. Not a substitute for professio
 
 ---
 
-*Built for Philippine civilian, AFP Reserve, and volunteer organization use.*
+*Built for Philippine civilian, and volunteer organization use.*
