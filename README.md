@@ -206,4 +206,54 @@ For organizational and personal preparedness use. Not a substitute for professio
 
 ---
 
+## Known Limitations
+
+**Data storage**
+- All data lives in the browser's localStorage — tied to the specific browser and file path on that device
+- Clearing browser cache or site data will erase all MEDKIT data permanently
+- Data is not synced across devices automatically — requires manual Export/Import JSON
+- Different browsers on the same device cannot see each other's data (Chrome data is invisible to Firefox)
+- Always keep a regular Export JSON backup — it is the only recovery option if data is lost
+- Estimated capacity of 2,000–3,000 individuals before approaching the browser's 5MB localStorage limit
+
+**File and versioning**
+- The file must always be kept as `MEDKIT.html` — renaming between versions breaks localStorage continuity
+- If the file is moved to a different folder path, the browser treats it as a new origin and the old data will not be visible
+- No automatic update mechanism — teams must manually replace the file when a new version is released
+
+**Offline and network**
+- Fully offline once the file is on device — no internet required after download
+- Google Fonts are loaded from the internet for typography — if offline the app falls back to system fonts, which does not affect functionality
+- No real-time sync between devices — all multi-team coordination requires manual export and import
+
+**Import and merge**
+- Merge logic relies on `last_modified` timestamps — records created before v1.3 have no timestamp and will be treated as older than any timestamped record
+- If two teams create individuals with the same ID independently (no company tag enforced), conflicts must be resolved manually one by one
+- Overwrite import cannot be undone — always export a backup before importing
+
+**Mobile and browser support**
+- Layout is optimized for desktop — mobile responsive improvements are planned for v1.6
+- On small phone screens the two-column kit layout and admin modals may be cramped but remain functional
+- Tested on Chrome and Firefox — other browsers should work but are not formally verified
+- Private/incognito browsing mode may restrict localStorage — use normal browsing mode
+
+**Roles and security**
+- PIN authentication is basic — not suitable for sensitive medical records or HIPAA-equivalent compliance
+- There is no PIN complexity enforcement or lockout after failed attempts
+- Superadmin PIN is stored in localStorage in plaintext — do not use a PIN you use elsewhere
+- Anyone with physical access to the device and browser DevTools can read or modify localStorage data
+
+**Kit and pharmaceutical content**
+- Kit contents and pharmaceutical information are general recommendations — not a substitute for unit physician guidance or official military medical doctrine
+- Philippine brand names and sourcing information may change — verify availability before procurement
+- Pharmaceutical dosing information is for reference only — always consult a licensed medical professional before administering any medication
+- Prescription (Rx) items in Tier 2 are listed for awareness only — carrying prescription medications without authorization may be illegal
+
+**Multi-team sync**
+- Company tag must be set correctly from day one — it cannot be changed after setup
+- If a team skips the company tag setup or uses the same tag as another team, merge conflicts will require manual resolution
+- Additional Items flagged as core for one team lose their core flag on merge to another team — must be manually re-flagged
+
+---
+
 *Built for Philippine civilian, AFP Reserve, and volunteer organization use.*
