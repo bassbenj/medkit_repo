@@ -5,7 +5,7 @@
 
 ---
 
-A single-file offline medical readiness tracker for Filipino civilians, volunteer organizations, and small tactical groups.
+A single-file offline medical readiness tracker for Filipino civilians, AFP reservists, volunteer organizations, and small tactical groups.
 
 No installation. No server. No internet required. Open the HTML file in any browser.
 
@@ -231,6 +231,12 @@ For organizational and personal preparedness use. Not a substitute for professio
 - If two teams create individuals with the same ID independently (no company tag enforced), conflicts must be resolved manually one by one
 - Overwrite import cannot be undone — always export a backup before importing
 
+**Group kit counters**
+- Group kit progress uses a credit-based system — each core item earns full credit at recommended quantity, half credit at minimum, zero below minimum
+- Fire Team and Squad kit items are hard-capped at recommended + 2 per item — this is intentional to reflect realistic carry capacity
+- Section kit has no hard cap — stockpile mode for depot-level supply tracking
+- Operational status (🔴/🟡/🟢) is driven by the worst-performing item — a single item below minimum makes the whole kit red
+
 **Mobile and browser support**
 - Layout is optimized for desktop — mobile responsive improvements are planned for v1.6
 - On small phone screens the two-column kit layout and admin modals may be cramped but remain functional
@@ -256,4 +262,4 @@ For organizational and personal preparedness use. Not a substitute for professio
 
 ---
 
-*Built for Philippine civilian, and volunteer organization use.*
+*Built for Philippine civilian, AFP Reserve, and volunteer organization use.*
