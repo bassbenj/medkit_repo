@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEDKIT — Field Medical System v2.4</title>
+<title>MEDKIT — Field Medical System v2.2</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap');
 :root{--bg:#f5f3ef;--bg2:#ece9e3;--bg3:#ddd9d0;--surface:#fff;--surface2:#faf8f5;--border:#ccc8bf;--text:#1a1a18;--text2:#4a4a44;--text3:#8a8a80;--accent:#8b1a1a;--accent2:#c4392b;--green:#2d6a4f;--amber:#b45309;--blue:#1d4ed8;--sw:260px;--r:3px;--mono:'Share Tech Mono',monospace;--body:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;
@@ -518,7 +518,7 @@ nav{flex:1;padding:6px 0}
 <div id="setup-screen">
   <div class="setup-box">
     <div class="setup-logo">MEDKIT</div>
-    <div class="setup-sub">FIELD MEDICAL SYSTEM v2.4</div>
+    <div class="setup-sub">FIELD MEDICAL SYSTEM v2.2</div>
     <div class="setup-step">FIRST TIME SETUP</div>
     <div class="setup-notice">
       This information is permanent and cannot be changed after setup.<br>
@@ -550,7 +550,7 @@ nav{flex:1;padding:6px 0}
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">MEDKIT</div>
-    <div class="login-sub">FIELD MEDICAL SYSTEM // v2.4</div>
+    <div class="login-sub">FIELD MEDICAL SYSTEM // v2.2</div>
     <div class="login-lbl" id="login-lbl">ENTER PIN</div>
     <input type="password" class="login-inp" id="login-inp" placeholder="••••••" maxlength="20" autocomplete="off" onkeydown="if(event.key==='Enter')doLogin()">
     <button class="login-btn" onclick="doLogin()">ACCESS SYSTEM</button>
@@ -646,12 +646,8 @@ nav{flex:1;padding:6px 0}
 
 <div class="modal-ov" id="m-ci"><div class="modal">
   <div class="modal-title">CREATE INDIVIDUAL <span class="modal-x" onclick="closeM('m-ci')">✕</span></div>
-  <div class="fgrp"><label class="flbl">ID Number</label><input class="finp" id="ci-id" placeholder="e.g. 001"></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    <div class="fgrp"><label class="flbl">First Name</label><input class="finp" id="ci-firstName" placeholder="Juan"></div>
-    <div class="fgrp"><label class="flbl">Last Name</label><input class="finp" id="ci-lastName" placeholder="Cruz"></div>
-  </div>
-  <div class="fgrp"><label class="flbl">Nickname <span class="text-xs muted">(optional)</span></label><input class="finp" id="ci-nickname" placeholder="e.g. JC"></div>
+  <div class="fgrp"><label class="flbl">ID Number</label><input class="finp" id="ci-id" placeholder="e.g. PHR-001"></div>
+  <div class="fgrp"><label class="flbl">Full Name</label><input class="finp" id="ci-name" placeholder="Last, First MI"></div>
   <div class="fgrp"><label class="flbl">PIN (for login)</label><input class="finp" id="ci-pin" type="password" placeholder="Set login PIN"></div>
   <div class="fgrp"><label class="flbl">Assign to Fire Team (optional)</label><select class="fsel" id="ci-ft"></select></div>
   <div class="fgrp">
@@ -668,11 +664,7 @@ nav{flex:1;padding:6px 0}
   <div class="modal-title">EDIT INDIVIDUAL <span class="modal-x" onclick="closeM('m-edit')">✕</span></div>
   <input type="hidden" id="ei-id-orig">
   <div class="fgrp"><label class="flbl">ID Number</label><input class="finp" id="ei-id"></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    <div class="fgrp"><label class="flbl">First Name</label><input class="finp" id="ei-firstName" placeholder="Juan"></div>
-    <div class="fgrp"><label class="flbl">Last Name</label><input class="finp" id="ei-lastName" placeholder="Cruz"></div>
-  </div>
-  <div class="fgrp"><label class="flbl">Nickname <span class="text-xs muted">(optional)</span></label><input class="finp" id="ei-nickname" placeholder="e.g. JC"></div>
+  <div class="fgrp"><label class="flbl">Full Name</label><input class="finp" id="ei-name"></div>
   <div class="fgrp"><label class="flbl">Reset PIN (leave blank to keep)</label><input class="finp" id="ei-pin" type="password" placeholder="New PIN"></div>
   <div class="fgrp"><label class="flbl">Assign to Fire Team</label><select class="fsel" id="ei-ft"></select></div>
   <div class="fgrp"><label class="flbl">Status</label><select class="fsel" id="ei-status"><option value="active">Active</option><option value="inactive">Inactive</option><option value="deceased">Deceased</option></select></div>
@@ -707,11 +699,7 @@ nav{flex:1;padding:6px 0}
   <div class="modal-title">CREATE ADMIN <span class="modal-x" onclick="closeM('m-cadmin')">✕</span></div>
   <p class="text-xs muted mt8" style="margin-bottom:14px">Admins are individuals with elevated permissions. Create their individual profile first, then assign admin flag — or create a dedicated admin account here.</p>
   <div class="fgrp"><label class="flbl">ID Number</label><input class="finp" id="ca-id" placeholder="e.g. ADMIN-001"></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    <div class="fgrp"><label class="flbl">First Name</label><input class="finp" id="ca-firstName" placeholder="Juan"></div>
-    <div class="fgrp"><label class="flbl">Last Name</label><input class="finp" id="ca-lastName" placeholder="Cruz"></div>
-  </div>
-  <div class="fgrp"><label class="flbl">Nickname <span class="text-xs muted">(optional)</span></label><input class="finp" id="ca-nickname" placeholder="e.g. JC"></div>
+  <div class="fgrp"><label class="flbl">Full Name</label><input class="finp" id="ca-name"></div>
   <div class="fgrp"><label class="flbl">PIN</label><input class="finp" id="ca-pin" type="password"></div>
   <div class="mact"><button class="tbtn" onclick="closeM('m-cadmin')">Cancel</button><button class="tbtn pri" onclick="createAdmin()">Create Admin</button></div>
 </div></div>
@@ -760,7 +748,7 @@ nav{flex:1;padding:6px 0}
 <div id="sidebar">
   <div class="sb-logo">
     <div class="sb-logo-main">MEDKIT</div>
-    <div class="sb-logo-sub">FIELD MEDICAL SYSTEM v2.4</div>
+    <div class="sb-logo-sub">FIELD MEDICAL SYSTEM v2.2</div>
     <div class="sb-logo-sub" id="sb-company" style="color:var(--amber);margin-top:3px"></div>
   </div>
   <div class="sb-user" id="sb-user">
@@ -971,7 +959,7 @@ const LS = {
 // =====================================================================
 // DATA INIT
 // =====================================================================
-const DB_VERSION = 7;
+const DB_VERSION = 6;
 
 function getDB(){
   return LS.get('medkit_db') || {
@@ -1096,52 +1084,7 @@ function migrateDB(){
     changed = true;
   }
 
-  // v6 → v7: split name → firstName, lastName, nickname
-  if(!db.db_version || db.db_version < 7){
-    for(const uid in db.individuals){
-      const u = db.individuals[uid];
-      if(u.name && !u.firstName){
-        // Best-effort split: "Juan Cruz" → firstName:"Juan", lastName:"Cruz"
-        const parts = (u.name||'').trim().split(/\s+/);
-        u.firstName = parts[0] || '';
-        u.lastName  = parts.slice(1).join(' ') || '';
-        u.nickname  = u.nickname || '';
-        changed = true;
-      }
-      if(u.nickname === undefined){ u.nickname = ''; changed = true; }
-    }
-    db.db_version = DB_VERSION;
-    changed = true;
-  }
-
   if(changed) saveDB(db);
-}
-
-
-// =====================================================================
-// NAME HELPERS
-// =====================================================================
-// format: 'short'   → Nickname if set, else firstName
-//         'full'    → "Last, First (Nick)" or "Last, First"
-//         'roster'  → "Cruz, Juan (JC)" — for tables
-//         'sidebar' → nickname if set, else firstName
-function getDisplayName(u, format){
-  if(!u) return '—';
-  const first = u.firstName || u.name || '—';
-  const last  = u.lastName  || '';
-  const nick  = u.nickname  || '';
-  if(format === 'sidebar') return nick || first;
-  if(format === 'short')   return nick || first;
-  if(format === 'full'){
-    const base = last ? last + ', ' + first : first;
-    return nick ? base + ' (' + nick + ')' : base;
-  }
-  if(format === 'roster'){
-    const base = last ? last + ', ' + first : first;
-    return nick ? base + ' (' + nick + ')' : base;
-  }
-  // Default fallback — compute from old name field
-  return u.name || first;
 }
 
 // =====================================================================
@@ -1219,7 +1162,7 @@ function doLogin(){
       if(u.pin && u.pin===val && u.status==='active'){
         const hasAnyTL=(u.isLeadFT||u.isLead||u.isLeadSQ||u.isLeadSEC);
         const role = u.isAdmin?'admin':(hasAnyTL?'lead':'individual');
-        SESSION={loggedIn:true,role,uid:id,name:getDisplayName(u,'sidebar'),isMedProf:u.isMedProf||false,isLeadFT:u.isLeadFT||u.isLead||false,isLeadSQ:u.isLeadSQ||false,isLeadSEC:u.isLeadSEC||false};
+        SESSION={loggedIn:true,role,uid:id,name:u.name,isMedProf:u.isMedProf||false,isLeadFT:u.isLeadFT||u.isLead||false,isLeadSQ:u.isLeadSQ||false,isLeadSEC:u.isLeadSEC||false};
         startSession(); return;
       }
     }
@@ -1230,7 +1173,7 @@ function doLogin(){
       const u=db.individuals[val];
       const hasAnyTL=(u.isLeadFT||u.isLead||u.isLeadSQ||u.isLeadSEC);
       const role = u.isAdmin?'admin':(hasAnyTL?'lead':'individual');
-      SESSION={loggedIn:true,role,uid:val,name:getDisplayName(u,'sidebar'),isMedProf:u.isMedProf||false,isLeadFT:u.isLeadFT||u.isLead||false,isLeadSQ:u.isLeadSQ||false,isLeadSEC:u.isLeadSEC||false};
+      SESSION={loggedIn:true,role,uid:val,name:u.name,isMedProf:u.isMedProf||false,isLeadFT:u.isLeadFT||u.isLead||false,isLeadSQ:u.isLeadSQ||false,isLeadSEC:u.isLeadSEC||false};
       startSession(); return;
     }
     document.getElementById('login-err').textContent='ID not found or inactive.';
@@ -1283,11 +1226,7 @@ function doLogout(){
 function updateSidebar(){
   const r=SESSION.role, uid=SESSION.uid||'—', name=SESSION.name||'Guest';
   document.getElementById('sb-uid').textContent=uid;
-  // Use nickname if available, else first name
-  const db0=getDB();
-  const u0=uid!=='SUPERADMIN'&&db0.individuals?db0.individuals[uid]:null;
-  const displayName=u0?getDisplayName(u0,'sidebar'):name;
-  document.getElementById('sb-uname').textContent=displayName;
+  document.getElementById('sb-uname').textContent=name;
   const roleEl=document.getElementById('sb-role');
   roleEl.className='sb-role';
 
@@ -2121,32 +2060,20 @@ const PHARMA={
     {id:'ph_aloe',name:'Aloe Vera Gel',brand:'Hana / Nature Republic',use:'Minor burns, sunburn, skin irritation',adult:'Apply generously as needed',child:'Safe for all ages. Avoid eyes',min:1,rec:2,tag:'BURN',core:false},
   ],
   rx:[
-    {id:'ph_amox',name:'Amoxicillin 500mg',brand:'Amoxil / Trimox / Ritemed',use:'Broad spectrum — wounds, respiratory, skin infections',adult:'500mg every 8hrs for 5–7 days',child:'25–45mg/kg/day in 3 divided doses',tag:'ANTIBIOTIC',core:true},
-    {id:'ph_coam',name:'Co-amoxiclav 625mg',brand:'Augmentin / Clavamox',use:'Beta-lactamase resistant — infected wounds, animal bites',adult:'625mg every 8–12hrs with food for 5–7 days',child:'25/3.6mg/kg/day in 2–3 divided doses',tag:'ANTIBIOTIC',core:true},
-    {id:'ph_cipro',name:'Ciprofloxacin 500mg',brand:'Ciprobay / Ciflox',use:'GI infections, UTI, skin and soft tissue infections',adult:'500mg every 12hrs for 5–7 days',child:'Not recommended under 18 — affects cartilage',tag:'ANTIBIOTIC',core:false},
-    {id:'ph_metro',name:'Metronidazole 500mg',brand:'Flagyl / Metrozine',use:'Anaerobic infections, GI pathogens, dental infections',adult:'500mg every 8hrs for 5–7 days. No alcohol.',child:'7.5mg/kg every 8hrs',tag:'ANTIBIOTIC',core:false},
-    {id:'ph_doxy',name:'Doxycycline 100mg',brand:'Vibramycin / Doxylin',use:'Broad antibiotic, malaria prophylaxis, leptospirosis',adult:'100mg twice daily with food and water',child:'Not under 8yrs — causes permanent tooth staining',tag:'ANTIBIOTIC',core:false},
-    {id:'ph_azith',name:'Azithromycin 500mg',brand:'Zithromax / Azithrocin',use:'Respiratory infections, atypical pneumonia',adult:'500mg once daily for 3–5 days',child:'10mg/kg once daily for 3–5 days',tag:'ANTIBIOTIC',core:false},
-    {id:'ph_keto',name:'Ketorolac 10mg (oral)',brand:'Toradol / Ketoriv',use:'Stronger non-opioid pain for post-trauma',adult:'10mg every 4–6hrs. Max 5 days. Max 40mg/day',child:'Not recommended under 17yrs',tag:'PAIN',core:true},
-    {id:'ph_tram',name:'Tramadol 50mg',brand:'Tramal / Zydol',use:'Moderate to severe pain. Trained use only.',adult:'50–100mg every 4–6hrs. Max 400mg/day',child:'Not under 12yrs',tag:'PAIN',core:false},
-    {id:'ph_mpred',name:'Methylprednisolone',brand:'Medrol / Solu-Medrol',use:'Severe allergic reaction, anaphylaxis adjunct',adult:'4–48mg/day depending on condition',child:'0.5–1.7mg/kg/day in divided doses',tag:'ALLERGY',core:true},
-    {id:'ph_epi',name:'Epinephrine Auto-Injector',brand:'EpiPen',use:'Anaphylaxis — life-threatening allergic reaction',adult:'0.3mg IM outer thigh. Repeat in 5–15min if needed',child:'0.15mg (EpiPen Jr) for 15–30kg',tag:'ALLERGY',core:true},
-    {id:'ph_aceta',name:'Acetazolamide 250mg',brand:'Diamox',use:'Altitude sickness prevention above 2000m',adult:'125–250mg twice daily from 1–2 days before ascent',child:'2.5mg/kg every 12hrs. Consult physician',tag:'OTHERS',core:false},
-    {id:'ph_fluco',name:'Fluconazole 150mg',brand:'Diflucan / Flucozole',use:'Systemic fungal infection',adult:'150mg single dose (candida) or 200mg/day',child:'3mg/kg/day. Physician required',tag:'ANTIFUNGAL',core:false},
-    {id:'ph_alb',name:'Albendazole 400mg',brand:'Zentel / Eskazole',use:'Intestinal parasites, worm infestation',adult:'400mg single dose',child:'400mg single dose (over 2yrs)',tag:'OTHERS',core:false},
-    {id:'ph_meben',name:'Mebendazole 500mg',brand:'Vermox / Sqworm',use:'Pinworm, roundworm, hookworm',adult:'500mg single dose',child:'100mg twice daily 3 days (over 2yrs)',tag:'OTHERS',core:false},
-  ],
-  // IV Access — Medical Professionals only. Checkboxes only, does NOT count toward progress bar.
-  iv_access:[
-    {id:'iv_cath18',name:'IV Catheter 18G',brand:'BD Angiocath / Nipro',use:'Standard peripheral IV access for fluids and medications',adult:'Insert at 15° angle, bevel up. Flash confirms placement.',child:'Use 20–22G for pediatric',tag:'VASCULAR'},
-    {id:'iv_cath20',name:'IV Catheter 20G',brand:'BD Angiocath / Nipro',use:'Peripheral IV — preferred for medication administration',adult:'Smaller bore, less flow rate. Suitable for most medications.',child:'Preferred for pediatric patients',tag:'VASCULAR'},
-    {id:'iv_ext',name:'IV Extension Set with 3-way stopcock',brand:'B. Braun / Nipro',use:'Connects catheter to IV bag. 3-way allows multiple infusions.',adult:'Flush with 5–10ml NS before use. Remove air bubbles.',child:'Same. Use smallest volume extension set available.',tag:'VASCULAR'},
-    {id:'iv_ns100',name:'Normal Saline 100ml (NS 0.9%)',brand:'Fresenius / B. Braun',use:'IV flush and small-volume infusions',adult:'10ml/hr keep-open rate for patency. Push 10ml for flush.',child:'1–2ml/kg flush',tag:'FLUID'},
-    {id:'iv_tegaderm',name:'Tegaderm IV Dressing',brand:'3M Tegaderm / Smith+Nephew',use:'Transparent dressing to secure IV catheter',adult:'Secure catheter hub and cannula. Replace if wet or loose.',child:'Same',tag:'VASCULAR'},
-    {id:'iv_tq_access',name:'Tourniquet for IV Access (soft)',brand:'Any soft elastic band',use:'Venous distension for IV insertion. NOT a hemorrhage control TQ.',adult:'Apply 10–15cm proximal to insertion site. Release after flash.',child:'Use gentler tension in pediatric patients',tag:'VASCULAR'},
-    {id:'iv_alco',name:'Alcohol Swabs (70% isopropyl)',brand:'Any sterile prep pad',use:'Site preparation before IV insertion',adult:'Wipe in outward spiral, allow to dry 30 seconds before insertion.',child:'Same',tag:'ANTISEPTIC'},
-    {id:'iv_syringe',name:'10ml Syringe + 18G drawing needle',brand:'BD / Nipro',use:'Drawing medications, flushing lines, aspiration',adult:'Use 18G needle to draw, switch to smaller gauge for injection.',child:'Use 1–3ml syringe for pediatric doses',tag:'VASCULAR'},
-    {id:'iv_tape',name:'Adhesive Tape for IV Securing',brand:'Micropore / Leukopor',use:'Additional securing of IV line and catheter',adult:'Loop and secure the line to prevent accidental removal.',child:'Same. Use gentle tape near skin.',tag:'VASCULAR'},
+    {id:'ph_amox',name:'Amoxicillin 500mg',brand:'Amoxil / Trimox / Ritemed',use:'Broad spectrum — wounds, respiratory, skin infections',adult:'500mg every 8hrs for 5–7 days',child:'25–45mg/kg/day in 3 divided doses',tag:'ANTIBIOTIC'},
+    {id:'ph_coam',name:'Co-amoxiclav 625mg',brand:'Augmentin / Clavamox',use:'Beta-lactamase resistant — infected wounds, animal bites',adult:'625mg every 8–12hrs with food for 5–7 days',child:'25/3.6mg/kg/day in 2–3 divided doses',tag:'ANTIBIOTIC'},
+    {id:'ph_cipro',name:'Ciprofloxacin 500mg',brand:'Ciprobay / Ciflox',use:'GI infections, UTI, skin and soft tissue infections',adult:'500mg every 12hrs for 5–7 days',child:'Not recommended under 18 — affects cartilage',tag:'ANTIBIOTIC'},
+    {id:'ph_metro',name:'Metronidazole 500mg',brand:'Flagyl / Metrozine',use:'Anaerobic infections, GI pathogens, dental infections',adult:'500mg every 8hrs for 5–7 days. No alcohol.',child:'7.5mg/kg every 8hrs',tag:'ANTIBIOTIC'},
+    {id:'ph_doxy',name:'Doxycycline 100mg',brand:'Vibramycin / Doxylin',use:'Broad antibiotic, malaria prophylaxis, leptospirosis',adult:'100mg twice daily with food and water',child:'Not under 8yrs — causes permanent tooth staining',tag:'ANTIBIOTIC'},
+    {id:'ph_azith',name:'Azithromycin 500mg',brand:'Zithromax / Azithrocin',use:'Respiratory infections, atypical pneumonia',adult:'500mg once daily for 3–5 days',child:'10mg/kg once daily for 3–5 days',tag:'ANTIBIOTIC'},
+    {id:'ph_keto',name:'Ketorolac 10mg (oral)',brand:'Toradol / Ketoriv',use:'Stronger non-opioid pain for post-trauma',adult:'10mg every 4–6hrs. Max 5 days. Max 40mg/day',child:'Not recommended under 17yrs',tag:'PAIN'},
+    {id:'ph_tram',name:'Tramadol 50mg',brand:'Tramal / Zydol',use:'Moderate to severe pain. Trained use only.',adult:'50–100mg every 4–6hrs. Max 400mg/day',child:'Not under 12yrs',tag:'PAIN'},
+    {id:'ph_mpred',name:'Methylprednisolone',brand:'Medrol / Solu-Medrol',use:'Severe allergic reaction, anaphylaxis adjunct',adult:'4–48mg/day depending on condition',child:'0.5–1.7mg/kg/day in divided doses',tag:'ALLERGY'},
+    {id:'ph_epi',name:'Epinephrine Auto-Injector',brand:'EpiPen',use:'Anaphylaxis — life-threatening allergic reaction',adult:'0.3mg IM outer thigh. Repeat in 5–15min if needed',child:'0.15mg (EpiPen Jr) for 15–30kg',tag:'ALLERGY'},
+    {id:'ph_aceta',name:'Acetazolamide 250mg',brand:'Diamox',use:'Altitude sickness prevention above 2000m',adult:'125–250mg twice daily from 1–2 days before ascent',child:'2.5mg/kg every 12hrs. Consult physician',tag:'OTHERS'},
+    {id:'ph_fluco',name:'Fluconazole 150mg',brand:'Diflucan / Flucozole',use:'Systemic fungal infection',adult:'150mg single dose (candida) or 200mg/day',child:'3mg/kg/day. Physician required',tag:'ANTIFUNGAL'},
+    {id:'ph_alb',name:'Albendazole 400mg',brand:'Zentel / Eskazole',use:'Intestinal parasites, worm infestation',adult:'400mg single dose',child:'400mg single dose (over 2yrs)',tag:'OTHERS'},
+    {id:'ph_meben',name:'Mebendazole 500mg',brand:'Vermox / Sqworm',use:'Pinworm, roundworm, hookworm',adult:'500mg single dose',child:'100mg twice daily 3 days (over 2yrs)',tag:'OTHERS'},
   ]
 };
 
@@ -3005,21 +2932,15 @@ function buildPharmaPanel(contentId, filterBarId){
   const allFilterItems=[...PHARMA.otc_core,...PHARMA.otc_extra,...PHARMA.topical_core,...PHARMA.topical_extra,...pharmaAdd];
   buildFilterBar(filterBarId, allFilterItems);
 
-  // Progress bar: OTC core + Topical core + Rx core (Med Pro only) + additional core
+  // Progress bar: core items + additional items flagged as core
   const addCoreItems=pharmaAdd.filter(i=>i.isCore);
-  const isMedProBuild=SESSION.uid&&SESSION.uid!=='SUPERADMIN'&&(()=>{
-    const db2=getDB();const u2=db2.individuals&&db2.individuals[SESSION.uid];return u2&&u2.isMedProf;
-  })();
-  const coreItems=isMedProBuild
-    ? [...PHARMA.otc_core,...PHARMA.topical_core,...PHARMA.rx.filter(i=>i.core),...addCoreItems]
-    : [...PHARMA.otc_core,...PHARMA.topical_core,...addCoreItems];
+  const coreItems=[...PHARMA.otc_core,...PHARMA.topical_core,...addCoreItems];
   const coreChk=coreItems.filter(i=>state[i.id]);
   const pct=coreItems.length?Math.round(coreChk.length/coreItems.length*100):0;
-  const progLabel=isMedProBuild?'CORE (OTC + TOPICAL + Rx)':'CORE (OTC + TOPICAL)';
 
   let html=`<div class="card"><div class="card-hdr nocursor"><div class="card-title">Pharma Progress</div></div>
   <div class="prog-wrap">
-    <div class="prog-lbl"><span>${progLabel}</span><span id="pharma-prog-lbl">${coreChk.length} / ${coreItems.length} (${pct}%)</span></div>
+    <div class="prog-lbl"><span>CORE (OTC + TOPICAL)</span><span id="pharma-prog-lbl">${coreChk.length} / ${coreItems.length} (${pct}%)</span></div>
     <div class="prog-bar"><div class="prog-fill${pct===100?' done':''}" id="pharma-prog" style="width:${pct}%"></div></div>
   </div></div>`;
 
@@ -3049,37 +2970,14 @@ function buildPharmaPanel(contentId, filterBarId){
   PHARMA.topical_extra.forEach(item=>{ html+=renderPharmaItem(item,state,canTick); });
   html+='</div></div>';
 
-  // Rx — reference only for non-Med Pro, active checklist for Med Pro
-  const isMedPro=SESSION.uid&&SESSION.uid!=='SUPERADMIN'&&(()=>{const db2=getDB();const u2=db2.individuals&&db2.individuals[SESSION.uid];return u2&&u2.isMedProf;})();
-  if(isMedPro){
-    html+=`<div class="card"><div class="card-hdr" onclick="toggleCard('pharma-rx-${contentId}')">
-      <div class="card-title">Tier 2 — Prescription (Rx)</div>
-      <span class="badge" style="background:#7c3aed;color:#ede9fe">Rx</span>
-      <span class="badge b-core" style="margin-left:4px">MED PRO</span>
-      <span class="chev" id="chev-pharma-rx-${contentId}">▶</span>
-    </div><div class="card-body collapsed" id="pharma-rx-${contentId}">
-    <div class="rx-notice" style="border-color:#7c3aed;color:#7c3aed">⚕ Tick items you carry in your personal kit. Core Rx items count toward your combined progress bar.</div>`;
-    PHARMA.rx.forEach(item=>{ html+=renderRxItem(item, state, true); });
-    html+='</div></div>';
-    // IV Access — Med Pro only, no progress bar contribution
-    html+=`<div class="card"><div class="card-hdr" onclick="toggleCard('pharma-iv-${contentId}')">
-      <div class="card-title">Tier 3 — IV Access</div>
-      <span class="badge" style="background:#0369a1;color:#e0f2fe">IV</span>
-      <span class="badge b-core" style="margin-left:4px">MED PRO</span>
-      <span class="chev" id="chev-pharma-iv-${contentId}">▶</span>
-    </div><div class="card-body collapsed" id="pharma-iv-${contentId}">
-    <div class="rx-notice" style="border-color:#0369a1;color:#0369a1">💉 IV access supplies you personally carry. Does not count toward the progress bar.</div>`;
-    PHARMA.iv_access.forEach(item=>{ html+=renderRxItem(item, state, true); });
-    html+='</div></div>';
-  } else {
-    html+=`<div class="card"><div class="card-hdr" onclick="toggleCard('pharma-rx-${contentId}')">
-      <div class="card-title">Tier 2 — Prescription (Rx)</div><span class="badge b-rx">Rx ONLY</span>
-      <span class="chev" id="chev-pharma-rx-${contentId}">▶</span>
-    </div><div class="card-body collapsed" id="pharma-rx-${contentId}">
-    <div class="rx-notice">⚕ Prescription required in Philippines. For reference only. Consult your physician before carrying.</div>`;
-    PHARMA.rx.forEach(item=>{ html+=renderRxItem(item, null, false); });
-    html+='</div></div>';
-  }
+  // Rx
+  html+=`<div class="card"><div class="card-hdr" onclick="toggleCard('pharma-rx-${contentId}')">
+    <div class="card-title">Tier 2 — Prescription (Rx)</div><span class="badge b-rx">Rx ONLY</span>
+    <span class="chev" id="chev-pharma-rx-${contentId}">▶</span>
+  </div><div class="card-body collapsed" id="pharma-rx-${contentId}">
+  <div class="rx-notice">⚕ Prescription required in Philippines. For reference only. Consult your physician before carrying.</div>`;
+  PHARMA.rx.forEach(item=>{ html+=renderRxItem(item); });
+  html+='</div></div>';
 
   // Additional Items
   const isSA=SESSION.role==='superadmin';
@@ -3149,28 +3047,8 @@ function renderPharmaItem(item, state, canTick){
   </div>`;
 }
 
-function renderRxItem(item, state, canTick){
+function renderRxItem(item){
   const tag=item.tag||'OTHERS';
-  const coreFlag=item.core?`<span class="add-core-flag active">CORE</span>`:'';
-  // Med Pro checklist mode
-  if(canTick && state){
-    const chk=state[item.id]?'checked':'';
-    const cls=state[item.id]?' checked':'';
-    return `<div class="pharma-item${cls}" data-tag="${tag}" id="pi-${item.id}">
-      <div class="pi-row">
-        <input class="pi-chk" type="checkbox" ${chk} onchange="togglePharmaItem('${item.id}',this.checked)">
-        <div class="pi-body">
-          <div class="pi-name">${item.name}<span class="pi-brand">${item.brand}</span><span class="tag-pill tp-${tag}">${TAG_LABELS[tag]||tag}</span>${coreFlag}</div>
-          <div class="pi-use">${item.use}</div>
-          <div class="pi-dose">
-            <div class="pi-dose-box"><div class="pi-dose-lbl">Adult</div><div class="pi-dose-val">${item.adult}</div></div>
-            <div class="pi-dose-box"><div class="pi-dose-lbl">Pediatric</div><div class="pi-dose-val">${item.child}</div></div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-  }
-  // Reference-only mode (non Med Pro)
   return `<div class="rx-item" data-tag="${tag}">
     <div class="pi-name">${item.name}<span class="pi-brand">${item.brand}</span><span class="tag-pill tp-${tag}">${TAG_LABELS[tag]||tag}</span></div>
     <div class="pi-use">${item.use}</div>
@@ -3181,29 +3059,30 @@ function renderRxItem(item, state, canTick){
   </div>`;
 }
 
+function togglePharmaItem(itemId, val){
+  setPharmaItem(itemId, val);
+  // Sync both panels (shared state)
+  document.querySelectorAll(`#pi-${itemId}`).forEach(el=>{
+    val?el.classList.add('checked'):el.classList.remove('checked');
+    el.querySelector('input[type=checkbox]').checked=val;
+  });
+  refreshPharmaProg();
+  updateDashboard();
+}
+
 function refreshPharmaProg(){
   const state=getPharmaState();
   const db=getDB();
   const pharmaAdd=(db.additional_items&&db.additional_items['pharma'])||[];
   const addCore=pharmaAdd.filter(i=>i.isCore);
-
-  // Check if current user is Med Pro — combined bar includes Rx core
-  const isMedPro=SESSION.uid&&SESSION.uid!=='SUPERADMIN'&&(()=>{
-    const u2=db.individuals&&db.individuals[SESSION.uid];
-    return u2&&u2.isMedProf;
-  })();
-
-  const coreItems=isMedPro
-    ? [...PHARMA.otc_core,...PHARMA.topical_core,...PHARMA.rx.filter(i=>i.core),...addCore]
-    : [...PHARMA.otc_core,...PHARMA.topical_core,...addCore];
-
+  const coreItems=[...PHARMA.otc_core,...PHARMA.topical_core,...addCore];
   const coreChk=coreItems.filter(i=>state[i.id]);
   const pct=coreItems.length?Math.round(coreChk.length/coreItems.length*100):0;
   document.querySelectorAll('#pharma-prog').forEach(fill=>{
     fill.style.width=pct+'%';pct===100?fill.classList.add('done'):fill.classList.remove('done');
   });
   document.querySelectorAll('#pharma-prog-lbl').forEach(lbl=>{
-    lbl.textContent=`${coreChk.length} / ${coreItems.length} (${pct}%)${isMedPro?' incl. Rx':''}`;
+    lbl.textContent=`${coreChk.length} / ${coreItems.length} (${pct}%)`;
   });
 }
 
@@ -3552,7 +3431,7 @@ function renderRosterRow(uid, u, db, showTLBadge){
   const tlBadge  = showTLBadge&&(u.isLeadFT||u.isLead)?'★ ':'';
   return `<div class="roster-row">
     <span class="roster-id">${uid}</span>
-    <span class="roster-name">${tlBadge}${getDisplayName(u,'roster')}</span>
+    <span class="roster-name">${tlBadge}${u.name||'—'}</span>
     ${renderCivFAPill(civfaPct)}
     <div class="mini-bars">
       ${renderMiniBar(ifakPct,'IFAK')}
@@ -3639,15 +3518,11 @@ function updateDashboard_Individual(){
   let kitHtml='';
   ['ifak','civfa'].forEach(k=>{
     const data=KITS[k];
+    const s=getKitState(k);
+    const chk=data.core.filter(i=>s[i.id]);
+    const pct=data.core.length?Math.round(chk.length/data.core.length*100):0;
     const label=k==='ifak'?'IFAK':'Civilian FA';
-    let greenCount=0,yellowCount=0;
-    data.core.forEach(item=>{
-      const count=getIndivKitCount(k,item.id);
-      if(count>=item.rec) greenCount++;
-      else if(count>=item.min) yellowCount++;
-    });
-    const pct=data.core.length?Math.round((greenCount+(yellowCount*0.5))/data.core.length*100):0;
-    kitHtml+=`${label}: <strong>${pct}%</strong> (${greenCount}/${data.core.length} at rec)<br>
+    kitHtml+=`${label}: <strong>${pct}%</strong> (${chk.length}/${data.core.length})<br>
       <div class="prog-bar" style="margin-top:4px;margin-bottom:8px"><div class="prog-fill${pct===100?' done':''}" style="width:${pct}%"></div></div>`;
   });
   const ps=getPharmaState();
@@ -3945,7 +3820,7 @@ function renderIndividualsTab(db,el){
     if(u.isLeadSQ) flags.push('<span class="stbadge" style="background:var(--amber);color:#fff">🪖 SQ</span>');
     if(u.isLeadSEC) flags.push('<span class="stbadge" style="background:var(--amber);color:#fff">🏕 SEC</span>');
     if(u.isMedProf) flags.push('<span class="stbadge" style="background:var(--green);color:#fff">MED</span>');
-    h+=`<tr><td class="text-mono">${id}</td><td>${getDisplayName(u,'roster')}</td><td>${flags.join(' ')||'—'}</td><td>${ftName}</td>
+    h+=`<tr><td class="text-mono">${id}</td><td>${u.name||'—'}</td><td>${flags.join(' ')||'—'}</td><td>${ftName}</td>
       <td><span class="stbadge st-active">ACTIVE</span></td>
       <td><button class="tbtn" onclick="openEditIndividual('${id}')">Edit</button></td></tr>`;
   });
@@ -4114,18 +3989,16 @@ function openCreateIndividual(){
   Object.entries(db.fireteams||{}).filter(([,g])=>g.status==='active').forEach(([id,g])=>{
     ftSel.innerHTML+=`<option value="${id}">${g.name}</option>`;
   });
-  ['ci-id','ci-firstName','ci-lastName','ci-nickname','ci-pin'].forEach(id=>{document.getElementById(id).value='';});
-  ['ci-admin','ci-leadFT','ci-leadSQ','ci-leadSEC','ci-medprof'].forEach(id=>{document.getElementById(id).checked=false;});
+  ['ci-id','ci-name','ci-pin'].forEach(id=>{document.getElementById(id).value='';});
+  ['ci-admin','ci-lead','ci-medprof'].forEach(id=>{document.getElementById(id).checked=false;});
   document.getElementById('m-ci').classList.add('open');
 }
 
 function createIndividual(){
   const rawId=document.getElementById('ci-id').value.trim();
-  const firstName=document.getElementById('ci-firstName').value.trim();
-  const lastName=document.getElementById('ci-lastName').value.trim();
-  const nickname=document.getElementById('ci-nickname').value.trim();
+  const name=document.getElementById('ci-name').value.trim();
   const pin=document.getElementById('ci-pin').value;
-  if(!rawId||!firstName){alert('ID and First Name are required.');return;}
+  if(!rawId||!name){alert('ID and Name are required.');return;}
   const db=getDB();
   const tag=db.company_tag||'';
   const id=(tag&&!rawId.startsWith(tag+'-'))?`${tag}-${rawId}`:rawId;
@@ -4134,15 +4007,14 @@ function createIndividual(){
   const isLeadSQ=document.getElementById('ci-leadSQ').checked;
   const isLeadSEC=document.getElementById('ci-leadSEC').checked;
   const fireteam=document.getElementById('ci-ft').value||null;
+  // Check TL conflicts before saving
   if(isLeadFT && fireteam){
     const conflict=getTLConflict('fireteams',fireteam,'teamLeadFT',id,db);
     if(conflict && !confirmTLReplace(conflict,'Fire Team')) return;
     if(conflict) clearTLFlag('fireteams',fireteam,'teamLeadFT','isLeadFT',db);
   }
-  // Compute display name for backward compat
-  const name=lastName?`${lastName}, ${firstName}`:firstName;
   db.individuals[id]={
-    name,firstName,lastName,nickname,pin,fireteam,
+    name,pin,fireteam,
     isAdmin:document.getElementById('ci-admin').checked,
     isLeadFT,isLeadSQ,isLeadSEC,
     isMedProf:document.getElementById('ci-medprof').checked,
@@ -4162,9 +4034,7 @@ function openEditIndividual(id){
   if(!u) return;
   document.getElementById('ei-id-orig').value=id;
   document.getElementById('ei-id').value=id;
-  document.getElementById('ei-firstName').value=u.firstName||u.name||'';
-  document.getElementById('ei-lastName').value=u.lastName||'';
-  document.getElementById('ei-nickname').value=u.nickname||'';
+  document.getElementById('ei-name').value=u.name||'';
   document.getElementById('ei-pin').value='';
   document.getElementById('ei-status').value=u.status||'active';
   document.getElementById('ei-admin').checked=u.isAdmin||false;
@@ -4183,11 +4053,9 @@ function openEditIndividual(id){
 function saveEditIndividual(){
   const origId=document.getElementById('ei-id-orig').value;
   const newId=document.getElementById('ei-id').value.trim();
-  const firstName=document.getElementById('ei-firstName').value.trim();
-  const lastName=document.getElementById('ei-lastName').value.trim();
-  const nickname=document.getElementById('ei-nickname').value.trim();
+  const name=document.getElementById('ei-name').value.trim();
   const pin=document.getElementById('ei-pin').value;
-  if(!newId||!firstName){alert('ID and First Name required.');return;}
+  if(!newId||!name){alert('ID and Name required.');return;}
   const db=getDB();
   const u=db.individuals[origId];
   if(!u) return;
@@ -4195,6 +4063,7 @@ function saveEditIndividual(){
   const isLeadSQ=document.getElementById('ei-leadSQ').checked;
   const isLeadSEC=document.getElementById('ei-leadSEC').checked;
   const fireteam=document.getElementById('ei-ft').value||null;
+  // Check FT TL conflict (only if newly assigning)
   if(isLeadFT && fireteam && !u.isLeadFT){
     const conflict=getTLConflict('fireteams',fireteam,'teamLeadFT',newId,db);
     if(conflict && !confirmTLReplace(conflict,'Fire Team')) return;
@@ -4205,10 +4074,7 @@ function saveEditIndividual(){
     delete db.individuals[origId];
   }
   const tgt=db.individuals[newId];
-  tgt.firstName=firstName;
-  tgt.lastName=lastName;
-  tgt.nickname=nickname;
-  tgt.name=lastName?`${lastName}, ${firstName}`:firstName; // keep display name in sync
+  tgt.name=name;
   if(pin) tgt.pin=pin;
   tgt.fireteam=fireteam;
   tgt.status=document.getElementById('ei-status').value;
@@ -4218,6 +4084,7 @@ function saveEditIndividual(){
   tgt.isLeadSEC=isLeadSEC;
   tgt.isMedProf=document.getElementById('ei-medprof').checked;
   tgt.last_modified=new Date().toISOString();
+  // Update group TL references
   if(isLeadFT && fireteam && db.fireteams[fireteam]) db.fireteams[fireteam].teamLeadFT=newId;
   saveDB(db);
   closeM('m-edit');
@@ -4231,7 +4098,7 @@ function getTLConflict(collection, groupId, tlField, newUid, db){
   const existingTLId = group[tlField];
   if(!existingTLId || existingTLId === newUid) return null;
   const existingTL = db.individuals && db.individuals[existingTLId];
-  return existingTL ? {id:existingTLId, name:getDisplayName(existingTL,'roster')||existingTLId} : null;
+  return existingTL ? {id:existingTLId, name:existingTL.name||existingTLId} : null;
 }
 
 function confirmTLReplace(conflict, levelLabel){
@@ -4369,24 +4236,21 @@ function saveEditGroup(){
 }
 
 function openCreateAdmin(){
-  ['ca-id','ca-firstName','ca-lastName','ca-nickname','ca-pin'].forEach(id=>{document.getElementById(id).value='';});
+  ['ca-id','ca-name','ca-pin'].forEach(id=>{document.getElementById(id).value='';});
   document.getElementById('m-cadmin').classList.add('open');
 }
 
 function createAdmin(){
   const rawId=document.getElementById('ca-id').value.trim();
-  const firstName=document.getElementById('ca-firstName').value.trim();
-  const lastName=document.getElementById('ca-lastName').value.trim();
-  const nickname=document.getElementById('ca-nickname').value.trim();
+  const name=document.getElementById('ca-name').value.trim();
   const pin=document.getElementById('ca-pin').value;
-  if(!rawId||!firstName){alert('ID and First Name required.');return;}
+  if(!rawId||!name){alert('ID and Name required.');return;}
   const db=getDB();
   const tag=db.company_tag||'';
   const id=(tag&&!rawId.startsWith(tag+'-'))?`${tag}-${rawId}`:rawId;
   if(db.individuals[id]){alert('ID already exists.');return;}
-  const name=lastName?`${lastName}, ${firstName}`:firstName;
   db.individuals[id]={
-    name,firstName,lastName,nickname,pin,isAdmin:true,
+    name,pin,isAdmin:true,
     isLeadFT:false,isLeadSQ:false,isLeadSEC:false,
     isMedProf:false,status:'active',company:tag,
     last_modified:new Date().toISOString(),
